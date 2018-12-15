@@ -6,7 +6,7 @@ export const Buttons = styled.div`
   text-align: center;
   border-radius: 6px;
   padding: 1rem 0.5rem;
-
+  cursor: pointer;
   text-decoration: capatalize;
   overflow: hidden;
   position: relative;
