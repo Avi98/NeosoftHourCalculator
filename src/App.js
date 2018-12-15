@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import logo from './logo.svg';
+import React, { Component } from 'react';
 
-class App extends Component {
-  render() {
+import styled, {ThemeProvider} from 'styled-components';
+import {Theme} from './Theme';
+import {Header} from './components';
+
+const Container = styled.div`
+  background-color: ${props=>props.theme.backgroundGround};
+  font-size: ${p=> p.theme.fontsizeBase};
+  height: 8rem;
+  weidth: 8rem;
+`
+function App () {
+ 
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <ThemeProvider theme={Theme}>
+        <Container>
+          <Header />
+        </Container>
+      </ThemeProvider>
     );
-  }
+  
 }
 
 export default App;
