@@ -11,6 +11,9 @@ const Container = styled.div`
   background-color: ${props => props.theme.backgroundGround};
   font-size: ${p => p.theme.fontsizeBase};
   overflow: hidden;
+  display: felx;
+  justify-content: center;
+  width: calc(100%- 10px);
 `;
 function App() {
   return (
