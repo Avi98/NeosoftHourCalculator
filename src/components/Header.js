@@ -6,12 +6,15 @@ const Container = styled.div`
 align-items: center;
 justify-content: center;
 padding: 0.8rem;
+  background-color: ${props=>props.theme.backgroundGround};
+
  
 `
 export function Header(){
     return(
         <Container>
-         header
+            <img src ={'img/neosoft.svg'} style={{height:'1.4rem'}} />
+            
         </Container>
     )
 }
