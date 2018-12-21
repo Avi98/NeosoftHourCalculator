@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const RoundButtons = styled.div`
@@ -31,9 +31,16 @@ const TickButton = styled(RoundButtons)`
 export function TimePicker(props) {
   const currentDate = new Date();
   const currentTime = `${currentDate.getHours()}:${currentDate.getMinutes()}`;
+  const [time, setTime] = useState(currentTime);
+  const setChangeTime = e => setTime(e.target.value);
   return (
     <div>
-      <input type="time" value={currentTime} style={{ fontSize: "3em" }} />
+      <input
+        type="time"
+        value={time}
+        onChange={setChangeTime}
+        style={{ fontSize: "3em" }}
+      />
       <TickButton val={"✔"} />
     </div>
   );
